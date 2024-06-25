@@ -15,13 +15,13 @@ use b2sum_rs::Blake2bSum;
 
 fn main(){
     // Creates a new File Instance with a digest size of 64 bytes
-    let context = Blake2bSum::new(64);
+    let context = Blake2bSum::new(40);
 
     // Outputs a Hexadecimal String
-    let hash = context.read("example_file.txt");
+    let hash = context.read("secret.txt");
 
     // Converts the hexadecimal string to a vector of bytes
-    let _bytes = Blake2bSum::as_bytes(&hash);
+    let bytes = Blake2bSum::as_bytes(&hash);
 
     // Prints The Hexadecimal Representation
     println!("Hash: {}",hash);
